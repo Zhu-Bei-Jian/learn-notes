@@ -27,7 +27,7 @@ Go是一门支持并发编程的编程语言，它提供了丰富的并发原语
 - 例如：
 
 ```go
-goCopy codeselect {
+select {
     case result1 := <-ch1:
         // 处理来自ch1的数据
     case result2 := <-ch2:
@@ -45,7 +45,7 @@ goCopy codeselect {
 - 例如：
 
 ```go
-goCopy codevar mu sync.Mutex
+var mu sync.Mutex
 mu.Lock()
 // 访问共享资源
 mu.Unlock()
@@ -59,7 +59,7 @@ mu.Unlock()
 - 例如：
 
 ```go
-goCopy codevar wg sync.WaitGroup
+var wg sync.WaitGroup
 wg.Add(1) // 增加等待计数
 go func() {
     defer wg.Done() // 减少等待计数
